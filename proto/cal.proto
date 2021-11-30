@@ -22,5 +22,5 @@ message GetRequest{}
 
 message Response {
     bool created = 1;
-    repeated Meeting meetings = 2;
+    repeated Calendar calendars = 2;
 }
