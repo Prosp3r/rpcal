@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package calendar;
+
+service CalendarService {
+    rpc CreateCalendar(Calendar) returns(Response){}
+    rpc GetCalendars(GetRequest) returns(Response){}
+}
+
+message Calendar {
+    string name = 1;
+    repeated Meeting meetings = 2;
+}
+
+message Meeting{
+    string subject = 1;
+    string startTime = 2;
+    string endTime = 3;
+}
+
+message GetRequest{}
+
+message Response {
+    bool created = 1;
+    repeated Meeting meetings = 2;
+}
